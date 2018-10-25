@@ -15,10 +15,32 @@ namespace WebAPILibrary
 
         public SqlDataReader Reader;
 
-        public SqlHandler(string cmd, string conn)
+        /// <summary>
+        /// Executes SQL commands
+        /// </summary>
+        /// <param name="cmd">Querystring</param>
+        /// <param name="conn">Connection string for Database</param>
+        /// <param name="http">HTTP Actions: Get, GetOne Post, Put </param>
+        public SqlHandler(string cmd, string conn, string http = "")
         {
             _sqlCommand = cmd;
             _connectionString = conn;
+
+            SqlConnect();
+
+            switch (http)
+            {
+                default:
+                    break;
+                case "Get":
+                    break;
+                case "GetOne":
+                    break;
+                case "Post":
+                    break;
+                case "Put":
+                    break;
+            }
         }
 
         public void SqlConnect()
@@ -29,6 +51,8 @@ namespace WebAPILibrary
                 _conn.Open();
             }
         }
+
+
 
 
 
