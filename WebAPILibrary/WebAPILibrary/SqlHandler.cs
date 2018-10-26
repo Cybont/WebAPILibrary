@@ -59,7 +59,6 @@ namespace WebAPILibrary
             List<T> list = new List<T>();
             while (Reader.Read())
             {
-
             }
             
             return list;
